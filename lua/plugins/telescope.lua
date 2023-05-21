@@ -34,6 +34,11 @@ return {
 			end, 'Fuzzily search in current buffer')
 
 		nmap('<leader>gf', builtin.git_files, 'Search [G]it [F]iles')
+		nmap('<leader>gs', builtin.git_stash, 'Search [G]it [S]tashes')
+		nmap('<leader>gb', builtin.git_branches, 'Search [G]it [B]ranches')
+		nmap('<leader>gc', builtin.git_commits, 'Search [G]it [C]ommits')
+		nmap('<leader>bc', builtin.git_bcommits, 'Search [Buffer] [Commits]')
+
 		nmap('<leader>sh', builtin.help_tags, '[S]earch [H]elp')
 		nmap('<leader>sw', builtin.grep_string, '[S]earch current [W]ord')
 		nmap('<leader>sg', builtin.live_grep, '[S]earch by [G]rep')
