@@ -23,8 +23,8 @@ return {
 		pcall(telescope.load_extension, 'fzf')
 
 		-- See `:help telescope.builtin`
-		nmap('<leader>?', builtin.keymaps, 'Find recently opened files')
-		nmap('<leader><space>', builtin.find_files, 'Find existing buffers')
+		nmap('<leader>?', builtin.keymaps, 'Find keymap')
+		nmap('<leader><space>', builtin.find_files, 'Find files')
 		nmap('<leader>/', function()
 			-- You can pass additional configuration to telescope to change theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -36,7 +36,11 @@ return {
 		nmap('<leader>gf', builtin.git_files, 'Search [G]it [F]iles')
 		nmap('<leader>gs', builtin.git_stash, 'Search [G]it [S]tashes')
 		nmap('<leader>gb', builtin.git_branches, 'Search [G]it [B]ranches')
-		nmap('<leader>gc', builtin.git_commits, 'Search [G]it [C]ommits')
+		nmap('<leader>gc', function()
+			builtin.git_commits {
+				git_command = {"git","log","--pretty=oneline","--abbrev-commit", "-1000", "--","."},
+			}
+			end, 'Search [G]it [C]ommits')
 		nmap('<leader>bc', builtin.git_bcommits, 'Search [Buffer] [Commits]')
 
 		nmap('<leader>sh', builtin.help_tags, '[S]earch [H]elp')
