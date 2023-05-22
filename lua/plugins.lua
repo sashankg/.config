@@ -133,4 +133,5 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   'github/copilot.vim',
+  'tpope/vim-surround'
 }, {})
