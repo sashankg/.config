@@ -42,3 +42,11 @@ vim.o.termguicolors = true
 -- Split directions
 vim.o.splitbelow = true
 vim.o.splitright = true
+
+-- Tabs
+-- set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+vim.o.tabstop = 4
+vim.o.softtabstop = 0
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.smarttab = true
