@@ -18,8 +18,9 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
+  { 'tpope/vim-fugitive', lazy = true, cmd = { "Git", "G", "Gbrowse" }, },
   'tpope/vim-rhubarb',
+  { 'tpope/vim-surround', lazy = true, keys = { "S" } },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -133,5 +134,4 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   'github/copilot.vim',
-  'tpope/vim-surround'
 }, {})
