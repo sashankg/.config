@@ -26,7 +26,7 @@ return {
 
 		-- See `:help telescope.builtin`
 		nmap('Find keymap', '<leader>?', builtin.keymaps)
-		nmap('Find files', '<leader><space>', builtin.find_files)
+		nmap('[F]ind [F]iles', '<leader>ff', builtin.find_files)
 		nmap('Fuzzily search in current buffer', '<leader>/', function()
 			-- You can pass additional configuration to telescope to change theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -35,7 +35,7 @@ return {
 			})
 		end
 		)
-		nmap('Find buffers', '<leader>,', function()
+		nmap('Find buffers', '<leader><space>', function()
 			builtin.buffers {
 				attach_mappings = function(_, map)
 					map('i', '<c-w>', 'delete_buffer')
