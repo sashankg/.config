@@ -1,14 +1,14 @@
 return {
   'mhartington/formatter.nvim',
-  config = function(plugin)
+  config = function(_)
     require('formatter').setup {
       logging = true,
       log_level = vim.log.levels.WARN,
       filetype = {
         go = {
           require('formatter.filetypes.go').golines,
-        }
-      }
+        },
+      },
     }
   end,
   init = function()
