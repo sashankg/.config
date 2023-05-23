@@ -120,4 +120,5 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   'github/copilot.vim',
+  require('plugins/formatter'),
 }, {})
