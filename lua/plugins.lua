@@ -27,7 +27,7 @@ require('lazy').setup({
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
-  require('plugins/lspconfig'),
+  require('plugins.lspconfig'),
 
   {
     -- Autocompletion
@@ -84,7 +84,7 @@ require('lazy').setup({
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- Enable `luka.-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
       char = '┊',
@@ -111,15 +111,8 @@ require('lazy').setup({
     end,
   },
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
+  require('plugins.treesitter'),
   'github/copilot.vim',
-  require('plugins/formatter'),
+  require('plugins.formatter'),
   'Raimondi/delimitMate',
 }, {})
