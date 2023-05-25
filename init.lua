@@ -13,12 +13,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.api.nvim_create_user_command('GUndo', function()
-  vim.cmd('G reset HEAD~')
-end, {})
-
-vim.api.nvim_create_user_command('GPR', '!git push; gh pr create -w', {})
-
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
