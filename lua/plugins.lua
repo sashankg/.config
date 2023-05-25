@@ -121,4 +121,5 @@ require('lazy').setup({
   },
   'github/copilot.vim',
   require('plugins/formatter'),
+  'Raimondi/delimitMate',
 }, {})
