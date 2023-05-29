@@ -19,7 +19,7 @@ vim.keymap.set('i', '<C-j>', '<Down>')
 vim.keymap.set('i', '<C-k>', '<Up>')
 vim.keymap.set('i', '<C-l>', '<Right>')
 
-vim.keymap.set('n', '<C-w>', ':bd<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<C-w>', ':bp|bd #<CR>', { desc = 'Close buffer' })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Close buffer' })
 
 vim.keymap.set('n', '<C-g>', ':G<CR>', { desc = 'Open Git status' })
