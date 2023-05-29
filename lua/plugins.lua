@@ -20,7 +20,7 @@ require('lazy').setup({
   -- Git related plugins
   { 'tpope/vim-fugitive', lazy = true, cmd = { "Git", "G", "Gbrowse" }, },
   'tpope/vim-rhubarb',
-  { 'tpope/vim-surround', lazy = true, keys = { { "S", mode = "v" } } },
+  { 'tpope/vim-surround', lazy = true, keys = { { "S", mode = "v" }, "ds", "cs" } },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
