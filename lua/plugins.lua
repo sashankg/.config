@@ -91,9 +91,7 @@ require('lazy').setup({
       show_trailing_blankline_indent = false,
     },
   },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'preservim/nerdcommenter', },
 
   -- Fuzzy Finder (files, lsp, etc)
   require('plugins.telescope'),
