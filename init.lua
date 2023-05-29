@@ -1,6 +1,7 @@
 require('remap')
 require('vim')
 require('plugins')
+require('cmd')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
