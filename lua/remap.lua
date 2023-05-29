@@ -21,3 +21,11 @@ vim.keymap.set('i', '<C-l>', '<Right>')
 
 vim.keymap.set('n', '<C-w>', ':bd<CR>', { desc = 'Close buffer' })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Close buffer' })
+
+vim.keymap.set('n', '<C-g>', ':G<CR>', { desc = 'Open Git status' })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'Fugitive',
+  callback = function(ev)
+    vim.keymap.set('n', '<C-g>', ':bd<CR>', { desc = 'Close Git status', buffer = ev.buf })
+  end
+})
