@@ -27,15 +27,6 @@ return {
 		-- See `:help telescope.builtin`
 		nmap('Resume', '<leader>,', builtin.resume)
 		nmap('Find keymap', '<leader>?', builtin.keymaps)
-		nmap('[F]ind [F]iles', '<leader>ff', builtin.find_files)
-		nmap('Fuzzily search in current buffer', '<leader>/', function()
-			-- You can pass additional configuration to telescope to change theme, layout, etc.
-			builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-				winblend = 10,
-				previewer = false,
-			})
-		end
-		)
 		nmap('Find buffers', '<leader><space>', function()
 			builtin.buffers {
 				attach_mappings = function(_, map)
@@ -43,6 +34,19 @@ return {
 					return true
 				end
 			}
+		end
+		)
+		nmap('[F]ind [F]iles', '<leader>ff', builtin.find_files)
+		nmap('[F]ind [H]elp', '<leader>fh', builtin.help_tags)
+		nmap('[F]ind current [W]ord', '<leader>fw', builtin.grep_string)
+		nmap('[F]ind by [G]rep', '<leader>fg', builtin.live_grep)
+		nmap('[F]ind [D]iagnostics', '<leader>fd', builtin.diagnostics)
+		nmap('Fuzzily search in current buffer', '<leader>/', function()
+			-- You can pass additional configuration to telescope to change theme, layout, etc.
+			builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+				winblend = 10,
+				previewer = false,
+			})
 		end
 		)
 
@@ -70,10 +74,5 @@ return {
 			}
 		end
 		)
-
-		nmap('[S]earch [H]elp', '<leader>sh', builtin.help_tags)
-		nmap('[S]earch current [W]ord', '<leader>sw', builtin.grep_string)
-		nmap('[S]earch by [G]rep', '<leader>sg', builtin.live_grep)
-		nmap('[S]earch [D]iagnostics', '<leader>sd', builtin.diagnostics)
 	end
 }
