@@ -1,8 +1,6 @@
 vim.api.nvim_set_hl(0, "LuaLineTsCarets", { fg = "blue" })
 vim.cmd("syntax match LuaLineTsCarets /\"/")
 
-print(vim.inspect(vim.api.nvim_get_hl(0, { name = "LuaLineTsCarets" })))
-
 local firstWordTransform = function(text)
   return string.match(text, '(%w+)')
 end
