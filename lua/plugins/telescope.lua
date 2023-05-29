@@ -25,6 +25,7 @@ return {
 		pcall(telescope.load_extension, 'fzf')
 
 		-- See `:help telescope.builtin`
+		nmap('Resume', '<leader>,', builtin.resume)
 		nmap('Find keymap', '<leader>?', builtin.keymaps)
 		nmap('[F]ind [F]iles', '<leader>ff', builtin.find_files)
 		nmap('Fuzzily search in current buffer', '<leader>/', function()
