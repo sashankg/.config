@@ -93,5 +93,12 @@ require('lazy').setup({
       return vim.fn.executable 'make' == 1
     end,
   },
-
+  {
+    'rmagatti/auto-session',
+    opts = {
+      auto_save_enabled = true,
+      auto_restore_enabled = true,
+      auto_session_use_git_branch = true
+    }
+  },
 }, {})
