@@ -106,4 +106,8 @@ require('lazy').setup({
       })
     end
   },
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = true
+  }
 }, {})
