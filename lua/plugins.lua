@@ -66,5 +66,5 @@ require('lazy').setup({
     end,
   },
   require('plugins.autosession'),
-  require('plugins.nvim-tree'),
+  require('plugins.nvimtree'),
 }, {})
