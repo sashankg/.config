@@ -41,3 +41,6 @@ vim.keymap.set('n', '<leader>gp', function()
     vim.notify('No PR found for this line')
   end
 end, { desc = '[G]it [G]o to PR' })
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
