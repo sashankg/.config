@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.keymap.set('n', '<leader>gp', function()
   local fname = vim.api.nvim_buf_get_name(0)
   local lnum = vim.api.nvim_win_get_cursor(0)[1]
-  local resp = vim.api.nvim_exec2('!git blame -L ' .. lnum .. ',+1 --line-porcelain ' .. fname, { output = true })
+  local resp = vim.api.nvim_exec2('!git blame -w -L ' .. lnum .. ',+1 --line-porcelain ' .. fname, { output = true })
   local prnum = string.match(resp.output, '\nsummary.*%(#(%d+)%)')
   if prnum ~= nil then
     vim.cmd('!gh pr view ' .. prnum .. ' -w')
@@ -44,3 +44,5 @@ end, { desc = '[G]it [G]o to PR' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>', { silent = true })
