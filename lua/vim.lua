@@ -50,3 +50,5 @@ vim.o.softtabstop = 0
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
+
+vim.o.hlsearch = true
