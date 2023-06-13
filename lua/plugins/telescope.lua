@@ -29,6 +29,7 @@ return {
 		nmap('Find keymap', '<leader>?', builtin.keymaps)
 		nmap('Find buffers', '<leader><space>', function()
 			builtin.buffers {
+				sort_mru = true,
 				attach_mappings = function(_, map)
 					map('i', '<c-w>', 'delete_buffer')
 					return true
