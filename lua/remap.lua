@@ -23,7 +23,7 @@ vim.keymap.set('i', '<C-l>', '<Right>')
 vim.keymap.set('n', '<C-w>', '<c-6>:bd #<CR>', { desc = 'Close buffer' })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Close buffer' })
 
-vim.keymap.set('n', '<C-g>', ':G<CR>', { desc = 'Open Git status' })
+vim.keymap.set('n', '<C-g>', ':vertical G<CR>', { desc = 'Open Git status' })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'Fugitive',
   callback = function(ev)
