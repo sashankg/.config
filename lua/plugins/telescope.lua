@@ -14,6 +14,7 @@ return {
 					["<C-K>"] = 'move_selection_previous',
 				},
 			},
+			dynamic_preview_title = true,
 		},
 	},
 	init = function(telescope)
@@ -53,7 +54,23 @@ return {
 
 		nmap('Search [G]it [F]iles', '<leader>gf', builtin.git_files)
 		nmap('Search [G]it [S]tashes', '<leader>gs', builtin.git_stash)
-		nmap('Search [G]it [B]ranches', '<leader>gb', builtin.git_branches)
+		nmap('Search [G]it [B]ranches', '<leader>gb', function()
+			builtin.git_branches {
+				attach_mappings = function(_, map)
+					map({ "i", "n" }, "<CR>", function(bufnr)
+						local branch = state.get_selected_entry().value
+						actions.close(bufnr)
+						vim.cmd('G checkout ' .. branch)
+					end)
+					map({ "i", "n" }, "<C-a>", function(bufnr)
+						local branch = state.get_current_line()
+						actions.close(bufnr)
+						vim.cmd('G checkout -b ' .. branch)
+					end)
+					return true
+				end
+			}
+		end)
 		nmap('Search [G]it [C]ommits', '<leader>gc', function()
 			builtin.git_commits {
 				git_command = { "git", "log", "--pretty=oneline", "--abbrev-commit", "-1000", "--", "." },
