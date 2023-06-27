@@ -67,4 +67,5 @@ require('lazy').setup({
   },
   require('plugins.autosession'),
   require('plugins.nvimtree'),
+  'nvim-treesitter/nvim-treesitter-context',
 }, {})
