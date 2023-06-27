@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>gp', function()
   else
     vim.notify('No PR found for this line')
   end
-end, { desc = '[G]it [G]o to PR' })
+end, { desc = '[G]it Go to [P]R' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
