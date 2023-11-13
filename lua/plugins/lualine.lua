@@ -49,10 +49,20 @@ return {
     sections = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
-      lualine_c = { '%f' },
+      lualine_c = {
+        function()
+          return vim.fn.getcwd()
+        end
+      },
       lualine_x = { 'filetype' },
       lualine_y = { 'location' },
       lualine_z = { { 'datetime', style = '%I:%M %a %b %d' } },
     },
+    winbar = {
+      lualine_b = { '%f' }
+    },
+    inactive_winbar = {
+      lualine_c = { '%f' }
+    }
   },
 }
