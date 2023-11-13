@@ -68,7 +68,8 @@ return {
 						vim.cmd('G checkout -b ' .. branch)
 					end)
 					return true
-				end
+				end,
+				default_text = "sashank/"
 			}
 		end)
 		nmap('Search [G]it [C]ommits', '<leader>gc', function()
