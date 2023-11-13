@@ -22,7 +22,7 @@ require('lazy').setup({
 
   -- Editing utilities
   { 'tpope/vim-surround', lazy = true, keys = { { "S", mode = "v" }, "ds", "cs" } },
-  'preservim/nerdcommenter',
+  require('plugins.nerdcommenter'),
   'Raimondi/delimitMate',
   'tpope/vim-sleuth',
   'github/copilot.vim',
