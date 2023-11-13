@@ -53,5 +53,7 @@ end, { desc = '[G]it checkout [M]aster' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '}', '}zz')
+vim.keymap.set('n', '{', '{zz')
 
 vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>', { silent = true })
