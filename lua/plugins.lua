@@ -65,7 +65,6 @@ require('lazy').setup({
       return vim.fn.executable 'make' == 1
     end,
   },
-  require('plugins.autosession'),
   require('plugins.nvimtree'),
   'nvim-treesitter/nvim-treesitter-context',
   require('plugins.neotest')
