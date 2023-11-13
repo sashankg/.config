@@ -20,6 +20,7 @@ return {
       vim.keymap.set('n', '[c', gitsigns.prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
       vim.keymap.set('n', ']c', gitsigns.next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
       vim.keymap.set('n', '<leader>gh', gitsigns.preview_hunk, { buffer = bufnr, desc = '[Git] Preview [H]unk' })
+      vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { buffer = bufnr, desc = '[Git] [R]eset Hunk' })
       vim.keymap.set('n', '<leader>gl', function()
           gitsigns.blame_line { full = true, ignore_whitespace = true }
         end,
