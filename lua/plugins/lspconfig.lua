@@ -47,7 +47,7 @@ return {
             end
 
             nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-            nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+            nmap('<leader>.', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
             local telescope = require('telescope.builtin')
             nmap('gd', telescope.lsp_definitions, '[G]oto [D]efinition')
