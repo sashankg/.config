@@ -12,7 +12,6 @@ vim.keymap.set('n', '<C-h>', '<C-W><C-h>', { desc = 'Cursor to left pane' })
 vim.keymap.set('n', '<C-j>', '<C-W><C-j>', { desc = 'Cursor to lower pane' })
 vim.keymap.set('n', '<C-k>', '<C-W><C-k>', { desc = 'Cursor to upper pane' })
 vim.keymap.set('n', '<C-l>', '<C-W><C-l>', { desc = 'Cursor to right pane' })
-vim.keymap.set('n', '<C-v>', '<C-W><C-v>', { desc = 'Cursor to right pane' })
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
