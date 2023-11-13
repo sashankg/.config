@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- Git related plugins
-  { 'tpope/vim-fugitive', lazy = true, cmd = { "Git", "G", "Gbrowse" }, },
+  { 'tpope/vim-fugitive', lazy = true, cmd = { "Git", "G", "GBrowse" }, },
   'tpope/vim-rhubarb',
   require('plugins.gitsigns'),
 
