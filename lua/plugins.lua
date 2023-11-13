@@ -67,5 +67,6 @@ require('lazy').setup({
   },
   require('plugins.nvimtree'),
   'nvim-treesitter/nvim-treesitter-context',
+  'AndrewRadev/splitjoin.vim',
   require('plugins.neotest')
 }, {})
