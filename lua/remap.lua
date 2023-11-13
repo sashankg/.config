@@ -47,6 +47,10 @@ vim.keymap.set('n', '<leader>gp', function()
   end
 end, { desc = '[G]it Go to [P]R' })
 
+vim.keymap.set('n', '<leader>gm', function()
+  vim.cmd("G checkout master")
+end, { desc = '[G]it checkout [M]aster' })
+
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
