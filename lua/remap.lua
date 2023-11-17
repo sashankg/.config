@@ -32,6 +32,14 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = 'Fugitive',
   callback = function(ev)
     vim.keymap.set('n', '<C-g>', ':bd<CR>', { desc = 'Close Git status', buffer = ev.buf })
+    vim.keymap.set('n', 'cc', function()
+      vim.ui.input({ prompt = 'Commit message: ' }, function(msg)
+        if not msg then
+          return
+        end
+        vim.cmd('G! commit -m "' .. msg .. '"')
+      end)
+    end, { desc = 'Close Git status', buffer = ev.buf })
   end
 })
 
