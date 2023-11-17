@@ -56,7 +56,7 @@ return {
       },
       lualine_x = { 'filetype' },
       lualine_y = { 'location' },
-      lualine_z = { { 'datetime', style = '%I:%M %a %b %d' } },
+      lualine_z = {},
     },
     winbar = {
       lualine_b = { '%f' }
