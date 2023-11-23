@@ -48,3 +48,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+--   pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
+--   callback = function()
+--     vim.fn.jobstart('eslint_d --stdin --fix-to-stdout < ' .. vim.fn.expand('%'), {
+--       on_stdout = function(j, code)
+--         vim.print(j, code)
+--       end,
+--     })
+--   end,
+-- })
