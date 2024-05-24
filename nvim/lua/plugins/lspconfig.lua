@@ -21,6 +21,16 @@ return {
           telemetry = { enable = false },
         },
       },
+      rust_analyzer = {
+        ["rust-analyzer"] = {
+          checkOnSave = {
+            command = "clippy",
+          },
+          ["cargo"] = {
+            ["allFeatures"] = true,
+          },
+        },
+      },
     }
 
     -- Ensure the servers above are installed
