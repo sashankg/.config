@@ -123,11 +123,6 @@ return {
               return
             end
 
-            if client.name == "tsserver" then
-              vim.cmd("EslintFixAll")
-              return
-            end
-
             vim.lsp.buf.format {
               async = false,
               filter = function(c)

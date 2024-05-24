@@ -17,11 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Git related plugins
   { 'tpope/vim-fugitive', lazy = true, cmd = { "Git", "G", "GBrowse" }, },
-  'tpope/vim-rhubarb',
+  { 'tpope/vim-rhubarb',  lazy = true, cmd = { "GBrowse" } },
   require('plugins.gitsigns'),
 
   -- Editing utilities
-  { 'tpope/vim-surround', lazy = true, keys = { { "S", mode = "v" }, "ds", "cs" } },
+  { 'tpope/vim-surround',   lazy = true, keys = { { "S", mode = "v" }, "ds", "cs" } },
   require('plugins.nerdcommenter'),
   'Raimondi/delimitMate',
   'tpope/vim-sleuth',

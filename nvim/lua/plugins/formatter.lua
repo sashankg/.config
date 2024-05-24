@@ -8,6 +8,12 @@ return {
         go = {
           require('formatter.filetypes.go').golines,
         },
+        typescript = {
+          require('formatter.filetypes.javascript').eslint_d,
+        },
+        typescriptreact = {
+          require('formatter.filetypes.javascriptreact').eslint_d,
+        },
       },
     }
   end,
