@@ -75,15 +75,5 @@ require('lazy').setup({
   'nvim-treesitter/nvim-treesitter-context',
   'AndrewRadev/splitjoin.vim',
   require('plugins.neotest'),
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
-    keys = {
-      { "r",     mode = "o",          function() require("flash").remote() end,            desc = "Remote Flash" },
-      { "R",     mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" },      function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-    },
-  },
   require('plugins.dap')
 }, {})
