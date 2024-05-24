@@ -140,6 +140,16 @@ chars = "\u0002\""
 key = "Backslash"
 mods = "Command|Shift"
 
+[[keyboard.bindings]]
+chars = "\u001bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001bf"
+key = "Right"
+mods = "Alt"
+
 [scrolling]
 history = 10000
 
