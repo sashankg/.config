@@ -24,7 +24,7 @@ require('lazy').setup({
   { 'tpope/vim-surround',   lazy = true, keys = { { "S", mode = "v" }, "ds", "cs" } },
   require('plugins.nerdcommenter'),
   'Raimondi/delimitMate',
-  'tpope/vim-sleuth',
+  'tpope/vim-sleuth', -- Heuristically set buffer options
   'github/copilot.vim',
 
   -- Language utilities
@@ -34,8 +34,33 @@ require('lazy').setup({
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets' },
+    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
+    config = function()
+      local cmp = require('cmp')
+      cmp.setup {
+        mapping = cmp.mapping.preset.insert {
+          ['<C-j>'] = cmp.mapping.select_next_item(),
+          ['<C-k>'] = cmp.mapping.select_prev_item(),
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+        },
+      }
+    end,
   },
 
   -- UI
@@ -74,9 +99,8 @@ require('lazy').setup({
       return vim.fn.executable 'make' == 1
     end,
   },
-  require('plugins.nvimtree'),
   'nvim-treesitter/nvim-treesitter-context',
-  'AndrewRadev/splitjoin.vim',
+  { 'AndrewRadev/splitjoin.vim', lazy = true, keys = { { "gJ", "gS" } } },
   require('plugins.neotest'),
-  require('plugins.dap')
+  require('plugins.dap'),
 }, {})

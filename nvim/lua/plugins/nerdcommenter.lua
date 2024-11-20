@@ -1,5 +1,6 @@
 return {
   'preservim/nerdcommenter',
+  lazy = true,
   keys = {
     { "<leader>c", mode = { "n", "v" } },
   },

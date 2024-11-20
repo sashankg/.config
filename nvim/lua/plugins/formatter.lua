@@ -1,3 +1,11 @@
+local function eslint_d()
+  return {
+    exe = 'eslint_d',
+    args = { '--stdin', '--stdin-filename', vim.api.nvim_buf_get_name(0), '--fix-to-stdout' },
+    stdin = true,
+  }
+end
+
 return {
   'mhartington/formatter.nvim',
   config = function(_)
@@ -9,10 +17,10 @@ return {
           require('formatter.filetypes.go').golines,
         },
         typescript = {
-          require('formatter.filetypes.javascript').eslint_d,
+          eslint_d,
         },
         typescriptreact = {
-          require('formatter.filetypes.javascriptreact').eslint_d,
+          eslint_d,
         },
       },
     }
